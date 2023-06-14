@@ -37,7 +37,7 @@ export default defineConfig({
           { text: 'Titles', link: '/forms/titles' },
           { text: 'Rules', link: '/forms/rules' },
           { text: 'Manager', link: '/forms/manager' },
-          { text: 'Responses', link: '/forms/responses' },
+          { text: 'Handle responses', link: '/forms/handle-responses' },
           { text: 'Components', link: '/forms/components' },
         ]
       }
