@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/docs',
   title: "FancyCRUD",
   description: "Create forms and data tables with ease",
   themeConfig: {
