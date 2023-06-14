@@ -22,7 +22,8 @@ export default defineConfig({
       {
         text: 'Forms',
         items: [
-          { text: 'Fields', link: '/forms/fields/', collapsed: true, items: [
+          { text: 'Concepts', link: '/forms/concepts' },
+          { text: 'Fields', collapsed: true, items: [
             { text: 'Definition', link: '/forms/fields/' },
             { text: 'Text', link: '/forms/fields/text' },
             { text: 'Password', link: '/forms/fields/password' },
