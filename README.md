@@ -1,4 +1,4 @@
-# fancyCRUD
+# FancyCRUD
 
 ## Contributing
 
@@ -16,4 +16,3 @@ This project requires Node.js to be `v14.0.0` or higher, because we use new Java
 
 - See VitePress docs on supported [Markdown Extensions](https://vitepress.vuejs.org/guide/markdown) and the ability to [use Vue syntax inside markdown](https://vitepress.vuejs.org/guide/using-vue).
 
-- See the [Writing Guide](https://github.com/vuejs/docs/blob/main/.github/contributing/writing-guide.md) for our rules and recommendations on writing and maintaining documentation content.
