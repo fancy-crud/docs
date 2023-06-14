@@ -18,7 +18,7 @@ features:
     details: Generate forms using Javascript objects
   - title: Tables
     details: Create, Read, Update & Delete records
-  - title: Filters
-    details: Create filters for your tables
+  # - title: Filters
+  #   details: Create filters for your tables
 ---
 
