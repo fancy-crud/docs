@@ -24,5 +24,4 @@ jobs:
     - uses: mskelton/setup-yarn@v1
       with:
        node-version: ${{ matrix.node-version }}
-    - run: yarn ci
     - run: yarn run build --if-present
