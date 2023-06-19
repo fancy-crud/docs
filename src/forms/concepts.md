@@ -15,7 +15,7 @@ Fields are one of the main utilities to create forms using FancyCRUD. As long yo
 import FormExample from './form.vue'
 </script>
 
-## Structure
+### Structure
 To get the correctly fields structure we need to pass the raw fields to `useForm` composable. This function will return a normalized fields to interact with. 
 
 Let's see the next example:
