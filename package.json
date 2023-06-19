@@ -4,6 +4,16 @@
     "build": "vitepress build src",
     "preview": "vitepress preview src"
   },
+  "dependencies": {
+    "@fancy-crud/core": "^1.0.0",
+    "@fancy-crud/oruga-wrapper": "^1.0.0",
+    "@fancy-crud/vue": "^1.5.2",
+    "@oruga-ui/oruga-next": "^0.6.0",
+    "@mdi/font": "^6.7.96",
+    "axios": "^1.4.0",
+    "sass": "^1.63.4",
+    "vue": "^3.2.19"
+  },
   "devDependencies": {
     "vitepress": "^1.0.0-beta.2"
   }

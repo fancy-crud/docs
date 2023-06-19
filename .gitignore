@@ -11,3 +11,4 @@ node_modules
 server/media
 server/*.sqlite3
 __pycache__
+.vitepress/cache/deps

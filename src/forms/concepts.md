@@ -10,9 +10,10 @@ Fields are one of the main utilities to create forms using FancyCRUD. As long yo
 
 
 ## Demo
-::: warning Working
-Comming soon
-:::
+<FormExample />
+<script setup>
+import FormExample from './form.vue'
+</script>
 
 ## Structure
 To get the correctly fields structure we need to pass the raw fields to `useForm` composable. This function will return a normalized fields to interact with. 
@@ -20,16 +21,32 @@ To get the correctly fields structure we need to pass the raw fields to `useForm
 Let's see the next example:
 
 ```vue
+<template>
+  <div class="card">
+    <!-- Component to render the form -->
+    <f-form v-bind="form" />
+  </div>
+</template>
+
 <script lang="ts" setup>
-import { useForm, FieldType } from '@fancy-crud/vue'
+import { FieldType, useForm } from '@fancy-crud/vue'
 
 const form = useForm({
   fields: {
     firstName: {
       type: FieldType.text,
-      label: 'First name'
-    }
-  }
+      label: 'First name',
+      placeholder: 'John',
+    },
+    lastName: {
+      type: FieldType.text,
+      label: 'Last name',
+      placeholder: 'Doe',
+    },
+  },
+  settings: {
+    url: 'endpoint/'
+  },
 })
 </script>
 ```
