@@ -1,7 +1,15 @@
+import path from 'path'
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: {
+        '@theme': `${path.resolve(__dirname, 'theme')}/`,
+      },
+    }
+  },
   base: '/docs',
   title: "FancyCRUD",
   description: "Create forms and data tables with ease",

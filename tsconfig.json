@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ES2022",
+    "target": "ES2022",
+    "lib": ["DOM", "ESNext"],
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "typeRoots": [
+      "vite/client",
+      "src/**/typing",
+      "./node_modules/@fancy-crud/core/dist/src/**"
+    ],
+    "paths": {
+      "@theme/*": ["src/.vitepress/*"]
+    }
+  },
+  "include": [
+    "typings/**/*.d.ts",
+    "src/**/*.vue",
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "src/.**/**/*.ts",
+    "src/.**/**/*.tsx",
+    "src/.**/**/*.vue"
+  ],
+  "exclude": ["**/node_modules/**", "**/dist/**"],
+  "extensions": [".js", ".ts", ".tsx", ".jsx", ".vue"],
+  "allowSyntheticDefaultImports": true
+}

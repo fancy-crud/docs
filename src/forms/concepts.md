@@ -12,7 +12,7 @@ Fields are one of the main utilities to create forms using FancyCRUD. As long yo
 ## Demo
 <FormExample />
 <script setup>
-import FormExample from './form.vue'
+import FormExample from '@theme/components/form.vue'
 </script>
 
 ### Structure
