@@ -1,33 +1,42 @@
 {
-  "hash": "39311bdf",
-  "browserHash": "5cd18671",
+  "hash": "54a11b0f",
+  "browserHash": "48dfebac",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "6a7766d9",
+      "fileHash": "d14742bb",
+      "needsInterop": false
+    },
+    "@fancy-crud/vue": {
+      "src": "../../../../node_modules/@fancy-crud/vue/dist/fancy-crud-vue.mjs",
+      "file": "@fancy-crud_vue.js",
+      "fileHash": "29cd2093",
       "needsInterop": false
     },
     "@oruga-ui/oruga-next": {
       "src": "../../../../node_modules/@oruga-ui/oruga-next/dist/esm/index.mjs",
       "file": "@oruga-ui_oruga-next.js",
-      "fileHash": "c7ac202d",
+      "fileHash": "def9d94e",
       "needsInterop": false
     },
     "@fancy-crud/oruga-wrapper": {
-      "src": "../../../../node_modules/@fancy-crud/oruga-wrapper/dist/fancy-crud-oruga-wrapper.es.js",
+      "src": "../../../../node_modules/@fancy-crud/oruga-wrapper/dist/fancy-crud-oruga-wrapper.mjs",
       "file": "@fancy-crud_oruga-wrapper.js",
-      "fileHash": "b9cdb099",
+      "fileHash": "1001be0c",
       "needsInterop": false
     },
     "axios": {
       "src": "../../../../node_modules/axios/index.js",
       "file": "axios.js",
-      "fileHash": "2018f3b6",
+      "fileHash": "d36c0315",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-ZADJDYWD": {
+      "file": "chunk-ZADJDYWD.js"
+    },
     "chunk-5ITWY74L": {
       "file": "chunk-5ITWY74L.js"
     },

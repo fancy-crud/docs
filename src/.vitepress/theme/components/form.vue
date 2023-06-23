@@ -2,9 +2,12 @@
   <div class="card">
     <f-form v-bind="form" />
   </div>
+  <h3>{{ fullName }}</h3>
+  <br>
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
 import { FieldType, useForm } from '@fancy-crud/vue'
 
 const form = useForm({
@@ -23,6 +26,16 @@ const form = useForm({
   settings: {
     url: 'endpoint/'
   },
+})
+
+const fullName = computed(() => {
+  const firstName = form.fields.firstName.modelValue || ''
+  const lastName = form.fields.lastName.modelValue || ''
+
+  if (firstName || lastName)
+    return `Hello, ${firstName} ${lastName}`
+
+  return ''
 })
 </script>
 

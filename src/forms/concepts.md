@@ -183,8 +183,3 @@ const form = useForm({
 </script>
 ```
  Since we are using `select` field type. The `FancyCRUD` already now how to work with this field type. But, if we using a field type like `text`, no extra functionality will be added to the field. Even tho, you will be able to handle and work with that attribute. You can read more in the [select field section](./fields/select.md)
-
-
-::: warning Working
-Comming soon
-:::

@@ -1,8 +1,8 @@
-# Get Started
-FancyCRUD is a library intended for the creation of forms and tables, streamlining the process of creating everything from registration or login forms to complex dashboards.
+# Introduction
+FancyCRUD is a powerful library specifically designed to facilitate the creation of forms and tables, handling the Create, Read, Update, and Delete (CRUD) process.
 
 ## Installation
-We don't want limitations with the use of UI Frameworks. We known there are many alternatives and all of them are really powerful and unique. We're planning to handle them by using wrappers. Right now you can use a wrapper for:
+We don't want limitations with the use of UI Frameworks. We known there are many alternatives and all of them are really powerful and unique. We're planning to handle them by using wrappers. Right now, you can use a wrapper for:
 
 - [Oruga](https://oruga.io/)
 
@@ -14,22 +14,22 @@ npm i @fancy-crud/vue @fancy-crud/oruga-wrapper
 ```
 
 ## Configuration
-Let's see the base configuration to use FancyCRUD.
+Let's see the base configuration in your entry file(usually main.ts or main.js), and your entry file for styles.
 
-```ts
-// main.ts
-
+::: code-group
+```ts [main.ts]
 import { createApp } from 'vue'
 import axios from 'axios'
 import Oruga from '@oruga-ui/oruga-next'
 import FancyCrud from '@fancy-crud/vue'
 
-// import the components from Oruga and base styles
+// import the components and base styles from Oruga
 import { fields, table, utils, defaultClasses } from '@fancy-crud/oruga-wrapper'
 
 import App from './App.vue'
 
-import '@oruga-ui/oruga-next/dist/oruga-full.css'
+// You're main file for styles
+import './styles/main.css'
 
 // We're using axios to trigger the http requests
 axios.defaults.baseURL = 'http://localhost:9000/api/'
@@ -48,41 +48,52 @@ app.use(FancyCrud, {
 })
 
 app.mount('#app')
-
 ```
 
+```css [main.css]
+/* 
+  If the UI has CSS styles,
+  you should import them before the FancyCRUD styles.
+  After that, you can add your own classes
+  and additional styles.
+*/
+@import '@oruga-ui/oruga-next/dist/oruga-full.css';
+@import '@fancy-crud/vue/dist/fancy-crud-vue.css';
+```
+:::
 ## Usage example
-The next code creates a simple form for user registration
+The next code creates a simple form with two field, first name and last name.
 
 ```vue
 <template>
-    <f-form v-bind="form" />
+  <f-form v-bind="form" />
 </template>
 
 <script lang="ts" setup>
-import { useForm, FieldType } from '@fancy-crud/vue'
+import { FieldType, useForm } from '@fancy-crud/vue'
 
 const form = useForm({
-    // Specify the fields for the form
-    fields: {
-        firstName: {
-            type: FieldType.text,
-            label: 'First name',
-        },
-        lastName: {
-            type: FieldType.text,
-            label: 'Last name',
-        },
-        password: {
-            type: FieldType.password,
-            label: 'Password',
-            showPassword: false
-        },
+  fields: {
+    firstName: {
+      type: FieldType.text,
+      label: 'First name',
+      placeholder: 'John',
     },
-    settings: {
-        // The endpoint to send the form data
-        url: '/registration'
-    }
+    lastName: {
+      type: FieldType.text,
+      label: 'Last name',
+      placeholder: 'Doe',
+    },
+  },
+  settings: {
+    url: 'endpoint/'
+  },
 })
 </script>
 ```
+
+## Demo
+<FormExample />
+<script setup>
+import FormExample from '@theme/components/form.vue'
+</script>

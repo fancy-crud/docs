@@ -37,6 +37,7 @@ export default defineConfig({
             { text: 'Color', link: '/forms/fields/color' },
             { text: 'Datepicker', link: '/forms/fields/datepicker' },
             { text: 'Radio', link: '/forms/fields/radio' },
+            { text: 'Checkbox', link: '/forms/fields/checkbox' },
             { text: 'Select', link: '/forms/fields/select' },
             { text: 'Textarea', link: '/forms/fields/textarea' }
           ] },
