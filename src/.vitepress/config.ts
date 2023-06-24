@@ -30,7 +30,7 @@ export default defineConfig({
       {
         text: 'Forms',
         items: [
-          { text: 'basics', link: '/forms/basics' },
+          { text: 'Basics', link: '/forms/basics' },
           { text: 'Field types', collapsed: true, items: [
             { text: 'Text', link: '/forms/fields/text' },
             { text: 'Password', link: '/forms/fields/password' },
