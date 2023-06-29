@@ -1,4 +1,4 @@
-# Concepts
+# Basics
 When we are in the process to create a website, we'll be in the case to create one or more forms. And it's very likely that we have worked on any form before, so we go to another project and copy and paste parts of the older code, make some changes and voilà... right?.
 
 Yep, sometimes it could be just as ease like that, but in other cases we need to add more fields, so we need extra HTML, Javascript code, validations, handle the field values, send data into the requests, handle responses, display notifications and so on. At the end, our code becomes messy.
@@ -50,7 +50,7 @@ const form = useForm({
 })
 </script>
 ```
-We're defining a form with the field `firstName`. Even when we're just defining two values inside the firstName field (`type` and `label`). The composable will normalized the field structure and it going to add all the necessary values into the field.
+We're defining a form with the field `firstName`. Even when we're just defining three attributes(`type`, `label` and `placeholder`) inside the fields. The composable will normalized the field structure and it going to add all the necessary values into the field.
 
 So, we will have a structure as the next:
 
@@ -109,9 +109,7 @@ const form = useForm({
     firstName: {
       type: FieldType.text,
       label: 'First name',
-      rounded: true, // [!code focus:3]
-      onInput: (e) => console.log(e),
-      onBlur: (e) => console.log("Come back")
+      rounded: true, // [!code focus]
     }
   }
 })

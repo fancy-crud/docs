@@ -49,6 +49,12 @@ export default defineConfig({
           { text: 'Handle responses', link: '/forms/handle-responses' },
           { text: 'Components', link: '/forms/components' },
         ]
+      },
+      {
+        text: "Tables",
+        items: [
+          { text: "Basics", link: '/tables/' }
+        ]
       }
     ],
 

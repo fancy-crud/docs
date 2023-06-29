@@ -6,6 +6,9 @@ We don't want limitations with the use of UI Frameworks. We known there are many
 
 - [Oruga](https://oruga.io/)
 
+:::tip INFO
+We're working to bring more and more wrappers 😃.
+:::
 
 The next command will install `FancyCRUD` and the `oruga-wrapper`
 

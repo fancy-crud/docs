@@ -2,7 +2,16 @@
   <div class="card">
     <f-form v-bind="form" />
   </div>
-  <h3>{{ fullName }}</h3>
+  <!-- <h3>{{ fullName }}</h3> -->
+  <br>
+  <h6>Request</h6>
+  <br>
+
+  <code>url: {{ form.settings.url }}</code>
+  <br>
+  <code>payload:</code>
+  <br>
+  <pre>{{ requestData.jsonForm }}</pre>
   <br>
 </template>
 
@@ -36,6 +45,10 @@ const fullName = computed(() => {
     return `Hello, ${firstName} ${lastName}`
 
   return ''
+})
+
+const requestData = computed(() => {
+  return form.manager.getFormData()
 })
 </script>
 

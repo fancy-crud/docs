@@ -18,7 +18,8 @@
     "typeRoots": [
       "vite/client",
       "src/**/typing",
-      "./node_modules/@fancy-crud/core/dist/src/**"
+      "./node_modules/@fancy-crud/core/dist/src/**",
+      "./node_modules/@fancy-crud/vue/dist/src/**"
     ],
     "paths": {
       "@theme/*": ["src/.vitepress/*"]
