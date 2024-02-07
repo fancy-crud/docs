@@ -6,17 +6,14 @@ settings:
 
 dependencies:
   '@fancy-crud/core':
-    specifier: 2.1.0-beta.28
-    version: 2.1.0-beta.28(lodash.isequal@4.5.0)
+    specifier: 2.1.0-beta.34
+    version: 2.1.0-beta.34(lodash.isequal@4.5.0)
   '@fancy-crud/vue':
-    specifier: 2.1.0-beta.28
-    version: 2.1.0-beta.28(@fancy-crud/core@2.1.0-beta.28)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13)
-  '@fancy-crud/wrapper-oruga-ui':
-    specifier: 2.1.0-beta.28
-    version: 2.1.0-beta.28(@fancy-crud/core@2.1.0-beta.28)(@fancy-crud/vue@2.1.0-beta.28)(@oruga-ui/oruga-next@0.7.0)(@vueuse/core@10.7.1)(vue@3.4.13)
+    specifier: 2.1.0-beta.34
+    version: 2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13)
   '@fancy-crud/wrapper-vuetify':
-    specifier: ^0.0.0
-    version: 0.0.0(@fancy-crud/core@2.1.0-beta.28)(@fancy-crud/vue@2.1.0-beta.28)(@vueuse/core@10.7.1)(vue@3.4.13)(vuetify@3.5.2)
+    specifier: 2.1.0-beta.34
+    version: 2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@fancy-crud/vue@2.1.0-beta.34)(@vueuse/core@10.7.1)(vue@3.4.13)(vuetify@3.5.2)
   '@mdi/font':
     specifier: ^6.7.96
     version: 6.7.96
@@ -474,62 +471,46 @@ packages:
     dev: true
     optional: true
 
-  /@fancy-crud/bus@2.1.0-beta.28:
-    resolution: {integrity: sha512-Bus4XthG+FurKHosKpaO+S+Hy4CHeCJOVN3lhFO1vV59yiRktXfY38vUNH8Ke70+QkoRS/yOlzH1DGuivN+8UA==}
+  /@fancy-crud/bus@2.1.0-beta.34:
+    resolution: {integrity: sha512-PRhPcUUmpSqi81XBUjvEE3hb/rdXiiE5deWkVjQv466YMcjtBtcV4pLZhh4hGDxoR3OSRZV+Plpn7j5xCO1qmQ==}
     dev: false
 
-  /@fancy-crud/core@2.1.0-beta.28(lodash.isequal@4.5.0):
-    resolution: {integrity: sha512-NmRyjlrKKew6dWXXdeCAZbnaJivTb+4oP9dXCAeYoKWpZocaxQLX8CKKZTv6WO04NkzZdK5V4gkO27DB54lIVQ==}
+  /@fancy-crud/core@2.1.0-beta.34(lodash.isequal@4.5.0):
+    resolution: {integrity: sha512-fCSxj49tV9evrFQau/onn4W0hVDpJ8XJdEcHBxrYum6P7gNqAMF5YUm2kL3c69avXlIxltRuAuWjSiDX186FrA==}
     peerDependencies:
       lodash.isequal: ^4.5.0
     dependencies:
-      '@fancy-crud/bus': 2.1.0-beta.28
+      '@fancy-crud/bus': 2.1.0-beta.34
       lodash.isequal: 4.5.0
     dev: false
 
-  /@fancy-crud/vue@2.1.0-beta.28(@fancy-crud/core@2.1.0-beta.28)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13):
-    resolution: {integrity: sha512-YtqrryMKeca2xEpOjFsUngwiKV1Rw66gKBCFMSWMOM9Zg0acZRS7A6+VD0TRH5OoWUzsJboJFU+MduAzlc9HDQ==}
+  /@fancy-crud/vue@2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13):
+    resolution: {integrity: sha512-Hw+WVNwbJsqgLmW37GoalI0IH5CuWle4YzV6rHTyUerfV2L5+liggGeGtMKWpWODhE3AnLoUWQu3N4DuzLky0w==}
     peerDependencies:
-      '@fancy-crud/core': ^v2.1.0-beta.28
+      '@fancy-crud/core': ^v2.1.0-beta.34
       '@vueuse/core': ^10.4.1
       esno: 0.10.0
       lodash.isequal: ^4.5.0
       vue: ^3.3.2
     dependencies:
-      '@fancy-crud/core': 2.1.0-beta.28(lodash.isequal@4.5.0)
+      '@fancy-crud/core': 2.1.0-beta.34(lodash.isequal@4.5.0)
       '@vueuse/core': 10.7.1(vue@3.4.13)
       esno: 0.10.0
       lodash.isequal: 4.5.0
       vue: 3.4.13(typescript@4.8.3)
     dev: false
 
-  /@fancy-crud/wrapper-oruga-ui@2.1.0-beta.28(@fancy-crud/core@2.1.0-beta.28)(@fancy-crud/vue@2.1.0-beta.28)(@oruga-ui/oruga-next@0.7.0)(@vueuse/core@10.7.1)(vue@3.4.13):
-    resolution: {integrity: sha512-ZwUpkd0B7WPawmakuGfLL8O9GmcHaUJyjNzTBgFmmWzyG3Pq3Irqe+rXlh8GddakuyPFOnKlamRLZb9ekNJFJg==}
+  /@fancy-crud/wrapper-vuetify@2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@fancy-crud/vue@2.1.0-beta.34)(@vueuse/core@10.7.1)(vue@3.4.13)(vuetify@3.5.2):
+    resolution: {integrity: sha512-z+eBLyI/uKoMf4YydQplDx5QHukCaIABxMJGSMPRnzPzse30YJCZ6g2QWJb0K1BNab2Rmsae15D0WGu3dgmWbw==}
     peerDependencies:
-      '@fancy-crud/core': ^v2.1.0-beta.28
-      '@fancy-crud/vue': ^v2.1.0-beta.28
-      '@oruga-ui/oruga-next': ^0.7.0
-      '@vueuse/core': ^10.4.1
-      vue: ^3.2.19
-    dependencies:
-      '@fancy-crud/core': 2.1.0-beta.28(lodash.isequal@4.5.0)
-      '@fancy-crud/vue': 2.1.0-beta.28(@fancy-crud/core@2.1.0-beta.28)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13)
-      '@oruga-ui/oruga-next': 0.7.0(vue@3.4.13)
-      '@vueuse/core': 10.7.1(vue@3.4.13)
-      vue: 3.4.13(typescript@4.8.3)
-    dev: false
-
-  /@fancy-crud/wrapper-vuetify@0.0.0(@fancy-crud/core@2.1.0-beta.28)(@fancy-crud/vue@2.1.0-beta.28)(@vueuse/core@10.7.1)(vue@3.4.13)(vuetify@3.5.2):
-    resolution: {integrity: sha512-Sl6JPsFsD5YMR3sILxiWYnPEm3ykoPMsaXI2RcgFlOz9OCNSSOToQvOYozy6t8/12n4h/ZJpzaN9FJ9+Ki7cqA==}
-    peerDependencies:
-      '@fancy-crud/core': ^v2.1.0-alpha.79
-      '@fancy-crud/vue': ^v2.1.0-alpha.79
+      '@fancy-crud/core': ^v2.1.0-beta.34
+      '@fancy-crud/vue': ^v2.1.0-beta.34
       '@vueuse/core': ^10.4.1
       vue: ^3.2.19
       vuetify: ^3.3.23
     dependencies:
-      '@fancy-crud/core': 2.1.0-beta.28(lodash.isequal@4.5.0)
-      '@fancy-crud/vue': 2.1.0-beta.28(@fancy-crud/core@2.1.0-beta.28)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13)
+      '@fancy-crud/core': 2.1.0-beta.34(lodash.isequal@4.5.0)
+      '@fancy-crud/vue': 2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13)
       '@vueuse/core': 10.7.1(vue@3.4.13)
       vue: 3.4.13(typescript@4.8.3)
       vuetify: 3.5.2(typescript@4.8.3)(vue@3.4.13)

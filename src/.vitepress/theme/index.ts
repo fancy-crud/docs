@@ -19,6 +19,7 @@ import '@fancy-crud/wrapper-vuetify/dist/fancy-crud-wrapper-vuetify.css'
 import './index.sass'
 
 const vuetify = createVuetify({
+  ssr: true,
   components,
   directives,
   theme: {

@@ -8,6 +8,9 @@ export default defineConfig({
       alias: {
         '@theme': `${path.resolve(__dirname, 'theme')}/`,
       },
+    },
+    ssr: {
+      noExternal: ['@inertiajs/server',/\.css$/, /\?vue&type=style/, /^vuetify/],
     }
   },
   base: '/docs',
