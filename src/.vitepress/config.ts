@@ -14,7 +14,7 @@ export default defineConfig({
   title: "FancyCRUD",
   description: "Create forms and data tables with ease",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    // https://vitepress.dev/reference/default-theme-config    
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Get started', link: '/guide/get-started' }
@@ -30,17 +30,7 @@ export default defineConfig({
       {
         text: 'Forms',
         items: [
-          { text: 'Basics', link: '/forms/basics' },
-          { text: 'Field types', collapsed: true, items: [
-            { text: 'Text', link: '/forms/fields/text' },
-            { text: 'Password', link: '/forms/fields/password' },
-            { text: 'Color', link: '/forms/fields/color' },
-            { text: 'Datepicker', link: '/forms/fields/datepicker' },
-            { text: 'Radio', link: '/forms/fields/radio' },
-            { text: 'Checkbox', link: '/forms/fields/checkbox' },
-            { text: 'Select', link: '/forms/fields/select' },
-            { text: 'Textarea', link: '/forms/fields/textarea' }
-          ] },
+          { text: 'Fields', link: '/forms/basics/' },
           { text: 'Settings', link: '/forms/settings' },
           { text: 'Buttons', link: '/forms/buttons' },
           { text: 'Titles', link: '/forms/titles' },

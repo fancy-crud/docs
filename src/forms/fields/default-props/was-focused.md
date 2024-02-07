@@ -1,0 +1,2 @@
+#### wasFocused
+`default: false`

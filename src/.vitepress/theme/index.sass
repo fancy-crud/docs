@@ -1,12 +1,25 @@
 @import '@mdi/font/css/materialdesignicons.css'
-@import '@oruga-ui/oruga-next/dist/oruga-full.css'
-@import '@fancy-crud/vue/dist/fancy-crud-vue.css'
-@import '@fancy-crud/oruga-wrapper/dist/fancy-crud-oruga-wrapper.css'
 
-.card
-  padding: 1rem
-  background-color: #f9f9f9
-  border-radius: 1rem
+* 
+  box-sizing: border-box
+  padding: 0
+  margin: 0
 
-  .f-form-header__title
-    color: #363636 !important
+.vp-doc a
+  font-weight: inherit
+  color: inherit
+  text-decoration: inherit
+  text-underline-offset: inherit
+  transition: color 0.25s, opacity 0.25s
+  &:hover
+    color: inherit
+
+.vp-doc a:not(.f-button)
+  font-weight: 500
+  color: var(--vp-c-brand-1)
+  text-decoration: underline
+  text-underline-offset: 2px
+  transition: color 0.25s, opacity 0.25s
+
+  &:hover
+    color: var(--vp-c-brand-2)

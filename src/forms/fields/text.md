@@ -5,6 +5,7 @@
 import TextField from '@theme/components/fields/TextField.vue'
 </script>
 <TextField />
+
 ## Usage
 ```vue
 <template>
@@ -18,10 +19,10 @@ import { FieldType, useForm } from '@fancy-crud/vue'
 
 const form = useForm({
   fields: {
-    textField: {
+    name: {
       type: FieldType.text,
-      label: 'Text field',
-      placeholder: 'Como asi pues?',
+      label: 'Name',
+      placeholder: 'John Doe',
     },
   },
   settings: {
@@ -30,10 +31,25 @@ const form = useForm({
 })
 </script>
 ```
-## Props
-Remember that you can use native attributes like `placeholder`, `readonly`, etc.
-Also, the props from the UI that you chooses as wrapper.
-In this section we we'll only specify those props
 
-::: warning Still in progress
-:::
+## Props
+You can use the same native attributes for `<input type="text">` like `placeholder`, `readonly`, `disabled`, etc.
+Also, the props from the UI that you chooses as wrapper:
+
+----
+
+<!--@include: ./default-props/id.md -->
+
+<!--@include: ./default-props/class.md -->
+
+<!--@include: ./default-props/model-value.md -->
+
+<!--@include: ./default-props/model-key.md -->
+
+<!--@include: ./default-props/errors.md -->
+
+<!--@include: ./default-props/name.md -->
+
+<!--@include: ./default-props/ref.md  -->
+
+<!--@include: ./default-props/was-focused.md  -->

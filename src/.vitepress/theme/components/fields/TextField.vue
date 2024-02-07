@@ -11,8 +11,8 @@ const form = useForm({
   fields: {
     textField: {
       type: FieldType.text,
-      label: 'Text field',
-      placeholder: 'Como asi pues?',
+      label: 'Name',
+      placeholder: 'John Doe',
     },
   },
   settings: {
