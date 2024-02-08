@@ -135,6 +135,14 @@ const form = useForm({
 
 Also, you can work with objects and specify the label to be displayed, and the value to be picked. To those cases you need to use `optionLabel` and `optionValue`. Let's see an example:
 
+::: info
+If you don't specify the `optionLabel` when you're working with objects, it will display something like `[Object object]`.
+:::
+
+::: info
+If you don't specify the `optionValue` when you're working with objects, it will gives you the object as value.
+:::
+
 ```vue
 <script lang="ts" setup>
 import { useForm, FieldType } from '@fancy-crud/vue'
@@ -160,3 +168,32 @@ const form = useForm({
 })
 </script>
 ```
+
+<FieldURL></FieldURL>
+
+## Attribute: url
+`default: undefined`
+
+`type: string`
+
+Sometimes when you're working with the `select` field type. You will need to populate the field with some data from the backend. So, you can use the `url` attribute. If the url is specified the form will trigger a HTTP request to GET the values from an API, and automatically set those values into the field `options`. Then you can set `optionLabel` and `optionValue`, to display and picked the data from each object. Let's see an example:
+
+```vue
+<script lang="ts" setup>
+import { useForm, FieldType } from '@fancy-crud/vue'
+
+const form = useForm({
+  fields: {
+    favoriteColor: {
+      type: FieldType.select,
+      label: 'Favorite color',
+      url: 'employees/',
+      optionLabel: 'name',
+      optionValue: 'id'
+    }
+  }
+})
+</script>
+```
+
+<FieldURL></FieldURL>
