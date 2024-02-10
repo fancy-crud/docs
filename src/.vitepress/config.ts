@@ -33,7 +33,7 @@ export default defineConfig({
       {
         text: 'Forms',
         items: [
-          { text: 'Fields', link: '/forms/basics/' },
+          { text: 'Fields', link: '/forms/fields/' },
           { text: 'Settings', link: '/forms/settings' },
           { text: 'Buttons', link: '/forms/buttons' },
           { text: 'Rules', link: '/forms/rules' },

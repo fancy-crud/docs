@@ -1,2 +1,0 @@
-#### wasFocused
-`default: false`
