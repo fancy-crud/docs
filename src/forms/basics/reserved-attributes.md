@@ -21,12 +21,12 @@ const form = useForm({
 
 As you know, even when we have different field types there are some common attributes for every field; `class`, `id` or `name`. But there are specific attributes to handle some reserved actions and manage the input value.
 
-## Attribute: modelValue
+## ModelValue
 `default: null`
 
 `type: any`
 
-This attribute is to handle the input value. So you can always find the most recent value here, or set a initial value.
+The `modelValue` attribute is to handle the input value. So you can always find the most recent value here, or set a initial value.
 
 ```vue
 <template>
@@ -52,12 +52,12 @@ const form = useForm({
 <FormModelValue></FormModelValue>
 
 
-## Attribute: modelKey
+## ModelKey
 `default: (Same as the field key name)`
 
 `type: string`
 
-This attribute is responsible to handle the key name of the field to be send in the request payload.
+The `modelKey` attribute is responsible to handle the key name of the field to be send in the request payload.
 
 ```vue
 <template>
@@ -85,12 +85,12 @@ const form = useForm({
 
 <FormModelKey></FormModelKey>
 
-## Attribute: errors
+## Errors
 `default: []`
 
 `type: string[]`
 
-This attribute is to handle the field errors. These errors can be set from rules validation or backend validations. You can set errors programmatically as well.
+The `errors` attribute is to handle the field errors. These errors can be set from rules validation or backend validations. You can set errors programmatically as well.
 
 ```vue
 <script lang="ts" setup>
@@ -110,7 +110,7 @@ const form = useForm({
 
 <FormErrors></FormErrors>
 
-## Attribute: options
+## Options
 `default: undefined`
 
 `type: any[]`
@@ -171,7 +171,7 @@ const form = useForm({
 
 <FieldURL></FieldURL>
 
-## Attribute: url
+## URL
 `default: undefined`
 
 `type: string`
