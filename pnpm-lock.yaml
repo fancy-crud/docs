@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@fancy-crud/core':
-    specifier: 2.1.0-beta.34
-    version: 2.1.0-beta.34(lodash.isequal@4.5.0)
+    specifier: 2.1.0-beta.35
+    version: 2.1.0-beta.35(lodash.isequal@4.5.0)
   '@fancy-crud/vue':
-    specifier: 2.1.0-beta.34
-    version: 2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13)
+    specifier: 2.1.0-beta.35
+    version: 2.1.0-beta.35(@fancy-crud/core@2.1.0-beta.35)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13)
   '@fancy-crud/wrapper-vuetify':
-    specifier: 2.1.0-beta.34
-    version: 2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@fancy-crud/vue@2.1.0-beta.34)(@vueuse/core@10.7.1)(vue@3.4.13)(vuetify@3.5.2)
+    specifier: 2.1.0-beta.35
+    version: 2.1.0-beta.35(@fancy-crud/core@2.1.0-beta.35)(@fancy-crud/vue@2.1.0-beta.35)(@vueuse/core@10.7.1)(vue@3.4.13)(vuetify@3.5.2)
   '@mdi/font':
     specifier: ^6.7.96
     version: 6.7.96
@@ -471,46 +471,46 @@ packages:
     dev: true
     optional: true
 
-  /@fancy-crud/bus@2.1.0-beta.34:
-    resolution: {integrity: sha512-PRhPcUUmpSqi81XBUjvEE3hb/rdXiiE5deWkVjQv466YMcjtBtcV4pLZhh4hGDxoR3OSRZV+Plpn7j5xCO1qmQ==}
+  /@fancy-crud/bus@2.1.0-beta.35:
+    resolution: {integrity: sha512-3u7614QXXQr9omEt5Cyt71VGgJxuGshAShgVyZBEjFuK30JIzbBz6pCZLrb3m44ImRNXihDEpvgtifoUpUpF9w==}
     dev: false
 
-  /@fancy-crud/core@2.1.0-beta.34(lodash.isequal@4.5.0):
-    resolution: {integrity: sha512-fCSxj49tV9evrFQau/onn4W0hVDpJ8XJdEcHBxrYum6P7gNqAMF5YUm2kL3c69avXlIxltRuAuWjSiDX186FrA==}
+  /@fancy-crud/core@2.1.0-beta.35(lodash.isequal@4.5.0):
+    resolution: {integrity: sha512-CBAWVifa/HgUmwMZjYBmYsKWIi+RIe90X/Kg8f20ihQwBDEC5oxS5+mKdTr82Yp/XtLVWFM4nJuw44WdImjW4g==}
     peerDependencies:
       lodash.isequal: ^4.5.0
     dependencies:
-      '@fancy-crud/bus': 2.1.0-beta.34
+      '@fancy-crud/bus': 2.1.0-beta.35
       lodash.isequal: 4.5.0
     dev: false
 
-  /@fancy-crud/vue@2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13):
-    resolution: {integrity: sha512-Hw+WVNwbJsqgLmW37GoalI0IH5CuWle4YzV6rHTyUerfV2L5+liggGeGtMKWpWODhE3AnLoUWQu3N4DuzLky0w==}
+  /@fancy-crud/vue@2.1.0-beta.35(@fancy-crud/core@2.1.0-beta.35)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13):
+    resolution: {integrity: sha512-EZS8Rut8yi3h1WNvDtdPDYaGM3QpBHOpafbHtcGUNdhRUNivYjsWUopi3D1iTKiHm6fhHdWUfiKWeDMg3cpOWg==}
     peerDependencies:
-      '@fancy-crud/core': ^v2.1.0-beta.34
+      '@fancy-crud/core': ^v2.1.0-beta.35
       '@vueuse/core': ^10.4.1
       esno: 0.10.0
       lodash.isequal: ^4.5.0
       vue: ^3.3.2
     dependencies:
-      '@fancy-crud/core': 2.1.0-beta.34(lodash.isequal@4.5.0)
+      '@fancy-crud/core': 2.1.0-beta.35(lodash.isequal@4.5.0)
       '@vueuse/core': 10.7.1(vue@3.4.13)
       esno: 0.10.0
       lodash.isequal: 4.5.0
       vue: 3.4.13(typescript@4.8.3)
     dev: false
 
-  /@fancy-crud/wrapper-vuetify@2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@fancy-crud/vue@2.1.0-beta.34)(@vueuse/core@10.7.1)(vue@3.4.13)(vuetify@3.5.2):
-    resolution: {integrity: sha512-z+eBLyI/uKoMf4YydQplDx5QHukCaIABxMJGSMPRnzPzse30YJCZ6g2QWJb0K1BNab2Rmsae15D0WGu3dgmWbw==}
+  /@fancy-crud/wrapper-vuetify@2.1.0-beta.35(@fancy-crud/core@2.1.0-beta.35)(@fancy-crud/vue@2.1.0-beta.35)(@vueuse/core@10.7.1)(vue@3.4.13)(vuetify@3.5.2):
+    resolution: {integrity: sha512-3kW40USyY8gzwipY0LRljogrWb8rkSjroq6hn6bW8HAPVF4myop1hGx+xS1zhJC3KYf9zet0vIPNubHYnhDzhw==}
     peerDependencies:
-      '@fancy-crud/core': ^v2.1.0-beta.34
-      '@fancy-crud/vue': ^v2.1.0-beta.34
+      '@fancy-crud/core': ^v2.1.0-beta.35
+      '@fancy-crud/vue': ^v2.1.0-beta.35
       '@vueuse/core': ^10.4.1
       vue: ^3.2.19
       vuetify: ^3.3.23
     dependencies:
-      '@fancy-crud/core': 2.1.0-beta.34(lodash.isequal@4.5.0)
-      '@fancy-crud/vue': 2.1.0-beta.34(@fancy-crud/core@2.1.0-beta.34)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13)
+      '@fancy-crud/core': 2.1.0-beta.35(lodash.isequal@4.5.0)
+      '@fancy-crud/vue': 2.1.0-beta.35(@fancy-crud/core@2.1.0-beta.35)(@vueuse/core@10.7.1)(esno@0.10.0)(lodash.isequal@4.5.0)(vue@3.4.13)
       '@vueuse/core': 10.7.1(vue@3.4.13)
       vue: 3.4.13(typescript@4.8.3)
       vuetify: 3.5.2(typescript@4.8.3)(vue@3.4.13)

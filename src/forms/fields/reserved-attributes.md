@@ -197,3 +197,92 @@ const form = useForm({
 ```
 
 <FieldURL></FieldURL>
+
+
+## DebounceTime
+
+`default: 0`
+
+`type: number`
+
+The `debounceTime` property allows specifying a wait time before update the `modelValue`.
+
+
+## CreateOnly
+
+`default: false`
+
+`type: boolean`
+
+The `createOnly` is for those cases where you want to display a field only when the form is `FORM_MODE.create`.
+
+```vue
+<script lang="ts" setup>
+import { useForm, FieldType } from '@fancy-crud/vue'
+
+const form = useForm({
+  fields: {
+    favoriteColor: {
+      type: FieldType.select,
+      label: 'Favorite color',
+      createOnly: true
+    }
+  }
+})
+</script>
+```
+
+## UpdateOnly
+
+`default: false`
+
+`type: boolean`
+
+The `updateOnly` is for those cases where you want to display a field only when the form is `FORM_MODE.update`.
+
+```vue
+<script lang="ts" setup>
+import { useForm, FieldType } from '@fancy-crud/vue'
+
+const form = useForm({
+  fields: {
+    favoriteColor: {
+      type: FieldType.select,
+      label: 'Favorite color',
+      updateOnly: true
+    }
+  }
+})
+</script>
+```
+
+## Hidden
+
+`default: false`
+
+`type: boolean`
+
+The `updateOnly` is to hide a field, not matter the `FORM_MODE`.
+
+## Exclude
+
+`default: false`
+
+`type: boolean`
+
+The `exclude` attribute is to avoid the field to be add it in the request payload.
+
+## Multiple
+
+`default: false`
+
+`type: boolean`
+
+The `multiple` attribute allows you to start the `modelValue` as an array. Usually this attribute works perfectly along with the `FieldType.select`
+
+## Wrapper
+
+The `wrapper` attribute allows you to pass attributes to the field wrapper, but it depends on the UI Wrapper that you're using.
+
+
+## Rules

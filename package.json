@@ -6,9 +6,9 @@
     "preview": "vitepress preview src"
   },
   "dependencies": {
-    "@fancy-crud/core": "2.1.0-beta.34",
-    "@fancy-crud/vue": "2.1.0-beta.34",
-    "@fancy-crud/wrapper-vuetify": "2.1.0-beta.34",
+    "@fancy-crud/core": "2.1.0-beta.35",
+    "@fancy-crud/vue": "2.1.0-beta.35",
+    "@fancy-crud/wrapper-vuetify": "2.1.0-beta.35",
     "@mdi/font": "^6.7.96",
     "@oruga-ui/oruga-next": "^0.7.0",
     "@oruga-ui/theme-oruga": "^0.2.1",

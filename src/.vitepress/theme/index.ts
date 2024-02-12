@@ -12,6 +12,7 @@ import FormModelValue from './components/modelValue.vue'
 import FormModelKey from './components/modelKey.vue'
 import FormErrors from './components/attributes/FormErrors.vue'
 import FieldURL from './components/attributes/FieldURL.vue'
+import GreetForm from './components/command-basics/GreetForm.vue'
 
 import '@mdi/font/css/materialdesignicons.css'
 import '@fancy-crud/vue/dist/fancy-crud-vue.css'
@@ -37,6 +38,8 @@ const config = {
     ctx.app.component('FormModelKey', FormModelKey)
     ctx.app.component('FormErrors', FormErrors)
     ctx.app.component('FieldURL', FieldURL)
+    ctx.app.component('GreetForm', GreetForm)
+
   }
 }
 
