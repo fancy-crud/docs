@@ -110,6 +110,67 @@ const form = useForm({
 
 <FormErrors></FormErrors>
 
+## Rules
+
+Rules allow you to apply custom validation on fields. You can use Third-party libraries like Zod, Valibot, etc. Currently, there's a plugin to handle rules for Zod and Valibot, but you can write your own parsers as well.
+
+To install the current plugin parser you can run:
+
+::: code-group
+```bash [NPM]
+npm i @fancy-crud/plugin-rule-parsers
+```
+```bash [PNPM]
+pnpm add @fancy-crud/plugin-rule-parsers
+```
+```bash [Yarn]
+yarn add @fancy-crud/plugin-rule-parsers
+```
+:::
+
+
+You will need to add the parser in the `FancyCRUD` configurations. For example:
+
+::: code-group
+```ts [fancy-crud.config.ts]
+import { defineConfig } from '@fancy-crud/vue'
+
+import components, { styles } from '@fancy-crud/wrapper-vuetify'
+
+// For this example we're going to use Zod,
+// but there's a Valibot parser available
+import { zodSafeParser as parser } from '@fancy-crud/plugin-rule-parsers'
+import { axios } from 'axios'
+
+export const fancyCrud = defineConfig({
+  // Other configurations...
+
+  rules: {
+    parser  // The parser function
+  },
+})
+```
+:::
+
+There's no rule parser by default, so you can work with your own rules with no third-party rule dependency. The only condition is that the `rules` method should return a `string` value for any error or `true` when the field value is valid.
+
+To specify a rule for a field using Zod, you need to follow the next structure.
+
+```vue
+<script lang="ts" setup>
+import { useForm, FieldType } from '@fancy-crud/vue'
+
+const form = useForm({
+  fields: {
+    email: {
+      type: FieldType.text,
+      rules: value => ({ value, rule: z.string().email() }),
+    }
+  }
+})
+</script>
+```
+
 ## Options
 `default: undefined`
 
@@ -283,6 +344,3 @@ The `multiple` attribute allows you to start the `modelValue` as an array. Usual
 ## Wrapper
 
 The `wrapper` attribute allows you to pass attributes to the field wrapper, but it depends on the UI Wrapper that you're using.
-
-
-## Rules

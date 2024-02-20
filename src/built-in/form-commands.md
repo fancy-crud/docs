@@ -1,4 +1,4 @@
-# Built-in Form Commands
+# Form Commands
 
 **FancyCRUD** already provides a collection of commands to work with forms.
 
@@ -45,7 +45,7 @@ const form = useForm({
       type: FieldType.text,
       label: 'First name',
     },
-    updatedAt: {
+    updatedAt: { 
       type: FieldType.text,
       label: 'First name',
       updateOnly: true

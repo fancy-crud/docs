@@ -51,14 +51,13 @@ Then, we created a `firstName` field inside a form. And last, a computed propert
 
 ## Command
 
-You can use the `FancyCrud` built-in tools to create your own commands. Let's create a command that greets a person each time the user presses the greet button on a form. First of all, you need to define the class to pass parameters into the `CommandHandler`, an the Handler interface.
+You can use the `FancyCrud` built-in tools to create your own commands. Let's create a command that greets a person each time the user presses the greet button on a form. First of all, you need to define the command class.
 
 ```ts
-import type { BaseCommand } from '@fancy-crud/bus'
-import { meta } from '@fancy-crud/bus'
+import type { IBaseCommand, Meta } from '@fancy-crud/bus'
 
-export class GreetCommand implements BaseCommand {
-  public readonly meta = meta(IGreetHandler)
+export class GreetCommand implements IBaseCommand {
+  public readonly $meta: Meta<string>
 
   constructor(
     public readonly name: string,
@@ -66,46 +65,23 @@ export class GreetCommand implements BaseCommand {
 }
 ```
 
-We're creating a `GreetCommand` class that implements the `BaseCommand` interface, which requires the implementation of the `meta` attribute, this attribute is a utility for the `Bus` to be able to send the command to the corresponding Handler.
-
-## Handler interface
-
-As you can see, we're passing the `IGreetHandler` into the `meta()`, this is the interface (abstract class) that the command needs the handler to implement. So, let's create the `IGreetHandler` interface:
-
-```ts
-import type { BaseCommand, BaseHandler } from '@fancy-crud/bus'
-import { meta } from '@fancy-crud/bus'
-
-export class GreetCommand implements BaseCommand {
-  public readonly meta = meta(IGreetHandler)
-
-  constructor(
-    public readonly name: string,
-  ) {}
-}
-
-export abstract class IGreetHandler implements BaseHandler {
-  abstract execute(command: GreetCommand): string
-}
-```
-
-The `IGreetHandler` class implements BaseHandler, which requires the implementation of `execute()` function. We're passing the `GreetCommand` as parameter of the `execute()` function, and setting the return type for the function, this is useful for the command bus, it will be able to persist the return type of the function, so you will not have to know what's the return type of the command when you use it.
+We're creating a `GreetCommand` class that implements the `IBaseCommand` interface, which requires the implementation of the `$meta` attribute, this attribute is a utility for the `Bus` to be able to know the return type `string` for this command.
 
 ## Handler implementation
 
-Now let's create the implementation of `IGreetHandler` class.
+Now, let's create the handler for the `GreetCommand`.
 
 ```ts
-import type { GreetCommand, IGreetHandler } from '../commands/greet'
+import type { GreetCommand } from '../commands/greet'
 
-export abstract class GreetHandler implements IGreetHandler {
+export class GreetHandler implements IBaseHandler<GreetCommand> {
   execute(command: GreetCommand): string {
     return `Hello ${command.name}`
   }
 }
 ```
 
-As you can see, the `GreetHandler` is implementing the `IGreetHandler`, and we're using the name property in the command to concatenate it with the "Hello" string.
+As you can see, the `GreetHandler` is implementing the `IBaseHandler`, and we're passing the `GreetCommand` as generic type value, so the handler is able to infer the correct command type parameter and return type for the `execute` method.
 
 ## Command handler registration
 
@@ -113,16 +89,16 @@ Last but not least, we need to register the command into the command bus. To acc
 
 ```ts
 import { register } from '@fancy-crud/bus'
-import { IGreetHandler } from '../commands/greet'
+import { GreetCommand } from '../commands/greet'
 import { GreetHandler } from '../handlers/greet'
 
-register(ICreateFormHandler.name, CreateFormHandler)
+register(GreetCommand, GreetHandler)
 ```
 
 It is important to place the `register` function in a place where you know that the functions will always be executed. Otherwise, you will receive an error message like the following:
 
 ::: danger Error
-HandlerDoesNotExist: Handler not found for command: IGreetHandler
+HandlerDoesNotExist: Handler not found for command: GreetCommand
 :::
 
 ::: info
@@ -138,10 +114,10 @@ Once you completed the steps above, you will be able to execute the command, let
 
 <script lang="ts" setup>
 import { useForm, FieldType, Bus, register } from '@fancy-crud/vue'
-import { GreetCommand, IGreetHandler } from '../command-basics/commands/greet'
-import { GreetHandler } from './handlers/greet';
+import { GreetCommand } from '../commands/greet'
+import { GreetHandler } from '../handlers/greet';
 
-register(IGreetHandler.name, GreetHandler)
+register(GreetCommand, GreetHandler)
 
 const bus = new Bus()
 
