@@ -13,6 +13,7 @@ import FormModelKey from './components/modelKey.vue'
 import FormErrors from './components/attributes/FormErrors.vue'
 import FieldURL from './components/attributes/FieldURL.vue'
 import GreetForm from './components/command-basics/GreetForm.vue'
+import FormFieldSlots from '../../forms/components/FormFieldSlots.vue'
 
 import '@mdi/font/css/materialdesignicons.css'
 import '@fancy-crud/vue/dist/fancy-crud-vue.css'
@@ -39,7 +40,7 @@ const config = {
     ctx.app.component('FormErrors', FormErrors)
     ctx.app.component('FieldURL', FieldURL)
     ctx.app.component('GreetForm', GreetForm)
-
+    ctx.app.component('FormFieldSlots', FormFieldSlots)
   }
 }
 

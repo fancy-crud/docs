@@ -17,7 +17,8 @@ export default defineConfig({
   title: "FancyCRUD",
   description: "Create forms and data tables with ease",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config    
+    // https://vitepress.dev/reference/default-theme-config
+    outline: [2, 4],
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Get started', link: '/guide/get-started' },
@@ -32,7 +33,6 @@ export default defineConfig({
       },
       { text: 'Built-in', items: [
         { text: "Command Bus Pattern", link: '/built-in/command-bus' },
-        { text: "Form commands", link: '/built-in/form-commands' },
         // { text: "Built-in table commands", link: '/built-in/command-bus' },
       ] },
       {
@@ -42,8 +42,9 @@ export default defineConfig({
           { text: 'Settings', link: '/forms/settings' },
           { text: 'Buttons', link: '/forms/buttons' },
           { text: 'Rules', link: '/forms/rules' },
-          { text: 'Response interceptor', link: '/forms/handle-responses' },
-          { text: 'Components', link: '/forms/components' },
+          { text: 'Response interceptor', link: '/forms/response-interceptors' },
+          { text: "Commands", link: '/forms/commands' },
+          { text: 'Components', link: '/forms/components/' },
         ]
       },
       {
@@ -59,4 +60,5 @@ export default defineConfig({
     ]
   },
   outDir: '../dist'
+
 })
