@@ -78,7 +78,7 @@ const form = useForm({
     }
   }
 })
-// [!code focus:5]
+// [!code highlight:5]
 console.log(form.fields.firstName.modelValue) // John Doe
 console.log(form.fields.firstName.label) // First name
 console.log(form.fields.firstName.id) // field-firstName-control

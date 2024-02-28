@@ -1,27 +1,6 @@
-## Reserved attributes
-Fields are available to use attributes from native HTML inputs, or specify attributes from the ui wrapper.
+## Reserved Attributes
 
-For example, let's say we are using Vuetify as our wrapper and we're going to use `placeholder` attribute into our `firstName` field. When the `FancyCRUD` map our field, it will pass all the attributes to the input, and display the text in the `placeholder` attribute.
-
-```vue
-<script lang="ts" setup>
-import { useForm, FieldType } from '@fancy-crud/vue'
-
-const form = useForm({
-  fields: {
-    firstName: {
-      type: FieldType.text,
-      label: 'First name',
-      placeholder: 'John Doe', // [!code focus]
-    }
-  }
-})
-</script>
-```
-
-As you know, even when we have different field types there are some common attributes for every field; `class`, `id` or `name`. But there are specific attributes to handle some reserved actions and manage the input value.
-
-## ModelValue
+### ModelValue
 
 | Name       | Type  | Default |
 |------------|-------|---------|
@@ -43,7 +22,7 @@ const form = useForm({
     firstName: {
       type: FieldType.text,
       label: 'First name',
-      modelValue: 'Juan Camaney' // [!code focus]
+      modelValue: 'Juan Camaney' // [!code highlight]
     },
   }
 })
@@ -53,7 +32,7 @@ const form = useForm({
 <FormModelValue></FormModelValue>
 
 
-## ModelKey
+### ModelKey
 
 | Name     | Type     | Default                     |
 |----------|----------|-----------------------------|
@@ -76,9 +55,9 @@ const form = useForm({
       label: 'First name',
 
       // Also, you can omit this attribute,
-      // and it going to take "firstName" (field key name)
+      // and it going to take "firstName" [fieldKey] name
       // as default value
-      modelKey: 'firstName'
+      modelKey: 'firstName' // [!code highlight]
     },
   }
 })
@@ -87,7 +66,7 @@ const form = useForm({
 
 <FormModelKey></FormModelKey>
 
-## Errors
+### Errors
 
 | Name   | Type       | Default |
 |--------|------------|---------|
@@ -104,7 +83,7 @@ const form = useForm({
     text: {
       type: FieldType.text,
       label: 'Favorite color',
-      errors: ['Displaying an error']
+      errors: ['Displaying an error'] // [!code highlight]
     }
   }
 })
@@ -113,7 +92,7 @@ const form = useForm({
 
 <FormErrors></FormErrors>
 
-## Rules
+### Rules
 
 | Name  | Type                                        | Default     |
 |-------|---------------------------------------------|-------------|
@@ -129,14 +108,14 @@ const form = useForm({
   fields: {
     email: {
       type: FieldType.text,
-      rules: value => ({ value, rule: z.string().email() }),
+      rules: value => ({ value, rule: z.string().email() }), // [!code highlight]
     }
   }
 })
 </script>
 ```
 
-## Options
+### Options
 
 | Name    | Type    | Default     |
 |---------|---------|-------------|
@@ -153,7 +132,7 @@ const form = useForm({
     favoriteColor: {
       type: FieldType.select,
       label: 'Favorite color',
-      options: ['red', 'blue', 'purple']
+      options: ['red', 'blue', 'purple'] // [!code highlight]
     }
   }
 })
@@ -187,9 +166,9 @@ const form = useForm({
     favoriteColor: {
       type: FieldType.select,
       label: 'Favorite color',
-      options: employees
-      optionLabel: 'name',
-      optionValue: 'id'
+      options: employees,     // [!code highlight]
+      optionLabel: 'name',    // [!code highlight]
+      optionValue: 'id'       // [!code highlight]
     }
   }
 })
@@ -198,7 +177,7 @@ const form = useForm({
 
 <FieldURL></FieldURL>
 
-## URL
+### URL
 
 | Name | Type     | Default     |
 |------|----------|-------------|
@@ -215,9 +194,9 @@ const form = useForm({
     favoriteColor: {
       type: FieldType.select,
       label: 'Favorite color',
-      url: 'employees/',
-      optionLabel: 'name',
-      optionValue: 'id'
+      url: 'employees/',    // [!code highlight]
+      optionLabel: 'name',  // [!code highlight]
+      optionValue: 'id'     // [!code highlight]
     }
   }
 })
@@ -227,7 +206,7 @@ const form = useForm({
 <FieldURL></FieldURL>
 
 
-## DebounceTime
+### DebounceTime
 
 | Name         | Type     | Default |
 |--------------|----------|---------|
@@ -236,7 +215,7 @@ const form = useForm({
 The `debounceTime` property allows specifying a wait time before update the `modelValue`.
 
 
-## CreateOnly
+### CreateOnly
 
 | Name       | Type      | Default |
 |------------|-----------|---------|
@@ -260,7 +239,7 @@ const form = useForm({
 </script>
 ```
 
-## UpdateOnly
+### UpdateOnly
 
 | Name       | Type      | Default |
 |------------|-----------|---------|
@@ -284,7 +263,7 @@ const form = useForm({
 </script>
 ```
 
-## Hidden
+### Hidden
 
 | Name   | Type      | Default |
 |--------|-----------|---------|
@@ -292,7 +271,7 @@ const form = useForm({
 
 The `hidden` is to hide a field, not matter the `FORM_MODE`.
 
-## Exclude
+### Exclude
 
 | Name    | Type      | Default |
 |---------|-----------|---------|
@@ -300,7 +279,7 @@ The `hidden` is to hide a field, not matter the `FORM_MODE`.
 
 The `exclude` attribute is to avoid the field to be add it in the request payload.
 
-## Multiple
+### Multiple
 
 | Name    | Type      | Default |
 |---------|-----------|---------|
@@ -308,6 +287,6 @@ The `exclude` attribute is to avoid the field to be add it in the request payloa
 
 The `multiple` attribute allows you to start the `modelValue` as an array. Usually this attribute works perfectly along with the `FieldType.select`
 
-## Wrapper
+### Wrapper
 
 The `wrapper` attribute allows you to pass attributes to the field wrapper, but it depends on the UI Wrapper that you're using.

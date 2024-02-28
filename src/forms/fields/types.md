@@ -18,33 +18,33 @@ import { useForm, FieldType } from '@fancy-crud/vue'
 const form = useForm({
   fields: {
     firstName: {
-      type: FieldType.text, // [!code focus]
+      type: FieldType.text, // [!code highlight]
       label: 'First name',
     }
     favoriteColor: {
-      type: FieldType.color, // [!code focus]
+      type: FieldType.color, // [!code highlight]
       label: 'Favorite color',
     },
     password: {
-      type: FieldType.password, // [!code focus]
+      type: FieldType.password, // [!code highlight]
       label: 'Password',
     },
     birthDate: {
-      type: FieldType.datepicker, // [!code focus]
+      type: FieldType.datepicker, // [!code highlight]
       label: 'Birth date',
     },
     role: {
-      type: FieldType.radio, // [!code focus]
+      type: FieldType.radio, // [!code highlight]
       label: 'Role',
       options: ["Manager", "Developer", "Sales"]
     },
     programmingLanguage: {
-      type: FieldType.select, // [!code focus]
+      type: FieldType.select, // [!code highlight]
       label: 'Skills',
       options: ["Python", "Vue", "Typescript", "FancyCRUD", "NodeJS"]
     },
     comments: {
-      type: FieldType.textarea, // [!code focus]
+      type: FieldType.textarea, // [!code highlight]
       label: 'Comments',
     },
   }

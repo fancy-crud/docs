@@ -1,32 +1,8 @@
-## Events
+## Methods
 
-Fields also allows you to handle events from the native HTML input or custom events from the ui wrapper like `click`, `blur`, `focus`, etc. See the next example:
+### RecordValue
 
-```vue
-<script lang="ts" setup>
-import { useForm, FieldType } from '@fancy-crud/vue'
-
-const form = useForm({
-  fields: {
-    firstName: {
-      type: FieldType.text,
-      label: 'First name',
-      onFocus: () => {
-        // Do something
-      },
-
-      onBlur: () => {
-        // Do something
-      }
-    }
-  }
-})
-</script>
-```
-
-## RecordValue
-
-The `recordValue?: (value: any) => unknown` function is use it to get the field value coming from the source object. This is useful when you want to handle a nested object value. For example, let's say that you have the next object:
+The `recordValue?: (value: any) => unknown` function is use it to get the field value coming from the source object. This is useful when you want to handle a nested object value or you want to compute a value before assign it to the `modelValue`. For example, let's say that you have the next object:
 
 ```ts
 employee: {
@@ -50,19 +26,19 @@ const form = useForm({
   fields: {
     employee_id: {
       type: FieldType.text,
-      label: 'First name',
-      recordValue: (obj: Employee) => obj.id
+      label: 'Employee ID',
+      recordValue: (obj: { employee: Employee }) => obj.employee.id
     }
   }
 })
 </script>
 ```
 
-## InterceptOptions
+### InterceptOptions
 
 The `interceptOptions?: (options: any[]) => unknown[]` is use it to intercept the values that will be assigned into the de `options` attribute.
 
-## ParseModelValue
+### ParseModelValue
 
 The `parseModelValue` is a function to parse the `modelValue` before send it into the request payload. For example, let's say we have a `modelValue` with number as string, and you want to send that value as number. So, you can do something like:
 
@@ -106,6 +82,32 @@ const form = useForm({
       label: 'First name',
       modelValue: '1',
       parseModelValue: value => Number(value)
+    }
+  }
+})
+</script>
+```
+
+## Events
+
+Fields also allows you to handle events from the native HTML input or custom events from the ui wrapper like `click`, `blur`, `focus`, etc. See the next example:
+
+```vue
+<script lang="ts" setup>
+import { useForm, FieldType } from '@fancy-crud/vue'
+
+const form = useForm({
+  fields: {
+    firstName: {
+      type: FieldType.text,
+      label: 'First name',
+      onFocus: () => {
+        // Do something
+      },
+
+      onBlur: () => {
+        // Do something
+      }
     }
   }
 })
