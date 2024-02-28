@@ -290,7 +290,7 @@ const form = useForm({
 |--------|-----------|---------|
 | hidden | `boolean` | `false` |
 
-The `updateOnly` is to hide a field, not matter the `FORM_MODE`.
+The `hidden` is to hide a field, not matter the `FORM_MODE`.
 
 ## Exclude
 
