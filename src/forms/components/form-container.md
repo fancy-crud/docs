@@ -1,11 +1,20 @@
 ## Form Container
 The main form container, `<f-form />`, orchestrates the integration of the aforementioned components. It offers a comprehensive structure for managing the entire form, including the header, body, and footer.
 
+### Props
+
+| Name     | Description                                      | Type                 | Default |
+|----------|--------------------------------------------------|----------------------|---------|
+| id       | Form ID as symbol value                          | `symbol`             |         |
+| fields   | Normalized fields to render in the form          | `NormalizedFields`   |         |
+| settings | Normalized settings to manage form behavior      | `NormalizedSettings` |         |
+| buttons  | Normalized buttons to display in the form footer | `NormalizedButtons`  |         |
+
 ```vue
 <template>
   <!-- Expanded way to pass props -->
   <f-form
-    :id="fields.id"
+    :id="form.id"
     :fields="form.fields"
     :buttons="form.buttons"
     :settings="form.settings"
@@ -31,54 +40,8 @@ const form = useForm({
 
 ### Slots
 
-#### Header
-
-You can modify the form header by using the `form-header` slot. For example:
-
-```vue
-<template>
-  <f-form v-bind="form">
-    <template #form-header>
-      The best form header title
-    </template>
-  </f-form>
-</template>
-
-<script lang="ts" setup>
-import { FieldType, useForm } from '@fancy-crud/vue';
-
-const form = useForm({
-  fields: {
-    // Some fields...
-  },
-  settings: {
-    // Some settings...
-  },
-})
-</script>
-```
-
-When using the `form-header` you have access to the `formModeTitle` bind property. Which it's a reactive property that automatically change the form title depending on the form mode
-
-```vue
-<template>
-  <f-form v-bind="form">
-    <template #form-header="{ formModeTitle }">
-      <h5>{{ formModeTitle }}</h5>
-    </template>
-  </f-form>
-</template>
-
-<script lang="ts" setup>
-import { FieldType, useForm } from '@fancy-crud/vue';
-
-const form = useForm({
-  fields: {
-    // Some fields...
-  },
-  settings: {
-    // Some settings...
-  },
-})
-</script>
-```
+| Name                              | Description                                                             | Scope                                     |
+|-----------------------------------|-------------------------------------------------------------------------|-------------------------------------------|
+| form-header                       | Allows you to use the default slot as in <br> `f-form-header` component | Same as in <br> `f-form-header` component |
+| (before-\|after-)field-[fieldKey] | Allows you to use the same slots as in <br> `f-form-body` component     | Same as in <br> `f-form-body` component   |
+| form-footer                       | Allows you to use the default slot as in <br> `f-form-footer` component | Same as in <br> `f-form-footer` component |
