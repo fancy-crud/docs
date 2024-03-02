@@ -21,6 +21,11 @@ const form = useForm({
 ```
 
 ## Class
+
+| Name  | Type     | Default                              |
+|-------|----------|--------------------------------------|
+| class | `string` | (Depends on the selected ui wrapper) |
+
 You can pass some class names by using the `class` property, Just as you would do in a native HTML button.
 
 ```vue
@@ -39,6 +44,13 @@ const form = useForm({
 
 ## Label
 
+| Button | Name  | Type     | Default                                                  |
+|--------|-------|----------|----------------------------------------------------------|
+| main   | label | `string` | <code v-pre>"{{ Create record \| Save changes }}"</code> |
+| aux    | label | `string` | <code v-pre>"Cancel"</code>                              |
+
+The button label is represented as a string that can be a literal string:
+
 ```vue
 <script lang="ts" setup>
 const form = useForm({
@@ -55,7 +67,7 @@ const form = useForm({
 </script> 
 ```
 
-The button label is represented as a string that can include placeholders for dynamic values depending on the form mode. For example:
+Or can include placeholders for dynamic values depending on the form mode. For example:
 
 ```vue
 <script lang="ts" setup>
@@ -73,9 +85,13 @@ const form = useForm({
 </script> 
 ```
 
-As you can see in the code below, the form is going to display "Create record" when the form mode is `FORM_MODE.create`, and "Save Changes" when it's `FORM_MODE.update`
+As you can see in the code above, the form is going to display "Create record" when the form mode is `FORM_MODE.create`, and "Save Changes" when it's `FORM_MODE.update`
 
 ## Loading
+
+| Name      | Type      | Default |
+|-----------|-----------|---------|
+| isLoading | `boolean` | `false` |
 
 The `isLoading` property is particularly useful for informing users about ongoing background operations, enhancing the overall user experience by providing feedback on the form's status.
 
@@ -93,6 +109,10 @@ const form = useForm({
 ```
 
 ## Hidden
+
+| Name   | Type      | Default |
+|--------|-----------|---------|
+| hidden | `boolean` | `false` |
 
 If you want to hide or avoid a button to be rendered you can use the `hidden` property. In the next example the form is going to hide the `aux` button.
 
