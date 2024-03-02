@@ -3,12 +3,11 @@ When working with forms, it's common to provide settings to customize the behavi
 
 ## URL
 
-`required: true`
+| Name | Type     | Default |
+|------|----------|---------|
+| url  | `string` |         |
 
-`type: string`
-
-
-The `url` property is the API endpoint where the form data will be submitted. This setting allows you to specify the server endpoint responsible for processing and handling the submitted form data. It should be a string representing the URL where the form will send its data.
+The `url` property is the API endpoint where the form data will be submitted. This property allows you to specify the server endpoint responsible for processing and handling the submitted form data. It should be a string representing the URL where the form will send its data.
 
 ```vue
 <script lang="ts" setup>
@@ -27,9 +26,9 @@ const form = useForm({
 
 ## Mode
 
-`default: FORM_MODE.create`
-
-`type: FormMode`
+| Name | Type       | Default            |
+|------|------------|--------------------|
+| mode | `FormMode` | `FORM_MODE.create` |
 
 
 The `mode` of the form, determining whether it operates in:
@@ -71,9 +70,21 @@ const form = useForm({
 </script>
 ```
 
-## lookupField & lookupValue
+## Lookup Field
 
-The `lookupField` is the key name to set the `lookupValue`, where the `lookupValue` it's the value concatenated at the end of the url. For example:
+| Name        | Type     | Default |
+|-------------|----------|---------|
+| lookupField | `string` | `"id"`  |
+
+The `lookupField` is the key name to set the `lookupValue`
+
+## Lookup Value
+
+| Name        | Type     | Default     |
+|-------------|----------|-------------|
+| lookupValue | `string` | `undefined` |
+
+The `lookupValue` it's the value concatenated at the end of the url. For example:
 
 ```ts
 {
@@ -106,9 +117,15 @@ const form = useForm({
 </script>
 ```
 
+Then `FancyCRUD` will trigger a request to the next url endpoint: `employees/1/`. As you can see, the number 1 was append at the end of the `employees` url, this because the `lookupValue` property takes the value from `employee_id` in the current object
+
 Also, you can manually set the `lookupValue`, by accessing the settings key: `form.settings.lookupValue`
 
 ## Title
+
+| Name  | Type     | Default                                                   |
+|-------|----------|-----------------------------------------------------------|
+| title | `string` | <code v-pre>"{{ Create record \| Update record }}"</code> |
 
 The `title` of the form, represented as a string that can include placeholders for dynamic values. This title is often displayed at the top of the form interface, providing users with context about the purpose of the form. You can use placeholders, to dynamically change the title based on the form's mode. As you can see in the example below, the form will display "Create an Employee" when it's in `FORM_MODE.create`; and it will to display "Please be careful when editing employee" when it's in `FORM_MODE.update`
 
@@ -126,5 +143,9 @@ const form = useForm({
 ```
 
 ## Loading
+
+| Name    | Type      | Default |
+|---------|-----------|---------|
+| loading | `boolean` | `false` |
 
 A boolean indicating whether the form is in a `loading` state. When set to true, it signifies that the form is currently processing or fetching data, and a loading indicator may be displayed. This setting is particularly useful for informing users about ongoing background operations, enhancing the overall user experience by providing feedback on the form's status.
