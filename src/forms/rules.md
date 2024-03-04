@@ -1,6 +1,6 @@
 # Rules
 
-Rules allow you to apply custom validation on fields. You can use Third-party libraries like Zod, Valibot, etc. Currently, there's a plugin to handle rules for Zod and Valibot, but you can write your own parsers as well.
+Rules allows you to apply custom validation on fields. You can use Third-party libraries like Zod, Valibot, etc. Currently, there's a plugin to handle rules for Zod and Valibot, but you can write your own parsers as well.
 
 To install the current plugin parser you can run:
 
