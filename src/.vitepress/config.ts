@@ -26,15 +26,12 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Guide',
+        text: 'Getting Started',
         items: [
-          { text: 'Get Started', link: '/guide/get-started' },
+          { text: 'Installation', link: '/guide/get-started' },
+          { text: "Command Bus Pattern", link: '/built-in/command-bus' },
         ]
       },
-      { text: 'Built-in', items: [
-        { text: "Command Bus Pattern", link: '/built-in/command-bus' },
-        // { text: "Built-in table commands", link: '/built-in/command-bus' },
-      ] },
       {
         text: 'Forms',
         items: [

@@ -1,5 +1,5 @@
 ## Form Container
-The main form container, `<f-form />`, orchestrates the integration of the aforementioned components. It offers a comprehensive structure for managing the entire form, including the header, body, and footer.
+The main form container, `f-form`, orchestrates the integration of the aforementioned components. It offers a comprehensive structure for managing the entire form, including the header, body, and footer.
 
 ### Props
 
@@ -37,6 +37,13 @@ const form = useForm({
 })
 </script>
 ```
+
+### Events
+
+| Name     | Description                                                | Type                      |
+|----------|------------------------------------------------------------|---------------------------|
+| @success | Event emitted when the create/update a record successfully | `(response: any) => void` |
+| @error   | Event emitted after a create/update record fails           | `(error?: any) => void`   |
 
 ### Slots
 
