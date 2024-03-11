@@ -3,7 +3,7 @@
 ### ModelValue
 
 | Name       | Type  | Default |
-|------------|-------|---------|
+| ---------- | ----- | ------- |
 | modelValue | `any` | `null`  |
 
 The `modelValue` attribute is to handle the input value. So you can always find the most recent value here, or set a initial value.
@@ -34,9 +34,10 @@ const form = useForm({
 
 ### ModelKey
 
-| Name     | Type     | Default                     |
-|----------|----------|-----------------------------|
+| Name     | Type     | Default                       |
+| -------- | -------- | ----------------------------- |
 | modelKey | `string` | Same as the `[fieldKey]` name |
+| valor    |          |                               |
 
 The `modelKey` attribute is responsible to handle the key name of the field to be send in the request payload.
 
@@ -69,7 +70,7 @@ const form = useForm({
 ### Errors
 
 | Name   | Type       | Default |
-|--------|------------|---------|
+| ------ | ---------- | ------- |
 | errors | `string[]` | `[]`    |
 
 The `errors` attribute is to handle the field errors. These errors can be set from rules validation or backend validations. You can set errors programmatically as well.
@@ -95,7 +96,7 @@ const form = useForm({
 ### Rules
 
 | Name  | Type                                        | Default     |
-|-------|---------------------------------------------|-------------|
+| ----- | ------------------------------------------- | ----------- |
 | rules | `(value: any) => string \| true \| unknown` | `undefined` |
 
 This section is to understand how to specify a rule for a field. You can follow the Rules section to have a full understanding. The next example is using [Zod](https://zod.dev/), but you can use your own rules or third-party libraries like [Valibot](https://valibot.dev/) or [Joi](https://joi.dev/api/?v=17.12.2):
@@ -118,7 +119,7 @@ const form = useForm({
 ### Options
 
 | Name    | Type    | Default     |
-|---------|---------|-------------|
+| ------- | ------- | ----------- |
 | options | `any[]` | `undefined` |
 
 You can use the `options` attribute to render a list of items. Then the user will be able to pick a value, and it will be assigned to `modelValue`
@@ -180,7 +181,7 @@ const form = useForm({
 ### URL
 
 | Name | Type     | Default     |
-|------|----------|-------------|
+| ---- | -------- | ----------- |
 | url  | `string` | `undefined` |
 
 Sometimes when you're working with the `select` field type. You will need to populate the field with some data from the backend. So, you can use the `url` attribute. If the url is specified the form will trigger a HTTP request to GET the values from an API, and automatically set those values into the field `options`. Then you can set `optionLabel` and `optionValue`, to display and picked the data from each object. Let's see an example:
@@ -209,7 +210,7 @@ const form = useForm({
 ### DebounceTime
 
 | Name         | Type     | Default |
-|--------------|----------|---------|
+| ------------ | -------- | ------- |
 | debounceTime | `number` | `0`     |
 
 The `debounceTime` property allows specifying a wait time before update the `modelValue`.
@@ -218,7 +219,7 @@ The `debounceTime` property allows specifying a wait time before update the `mod
 ### CreateOnly
 
 | Name       | Type      | Default |
-|------------|-----------|---------|
+| ---------- | --------- | ------- |
 | createOnly | `boolean` | `false` |
 
 The `createOnly` is for those cases where you want to display a field only when the form is `FORM_MODE.create`.
@@ -242,7 +243,7 @@ const form = useForm({
 ### UpdateOnly
 
 | Name       | Type      | Default |
-|------------|-----------|---------|
+| ---------- | --------- | ------- |
 | updateOnly | `boolean` | `false` |
 
 The `updateOnly` is for those cases where you want to display a field only when the form is `FORM_MODE.update`.
@@ -266,7 +267,7 @@ const form = useForm({
 ### Hidden
 
 | Name   | Type      | Default |
-|--------|-----------|---------|
+| ------ | --------- | ------- |
 | hidden | `boolean` | `false` |
 
 The `hidden` is to hide a field, not matter the `FORM_MODE`.
@@ -274,7 +275,7 @@ The `hidden` is to hide a field, not matter the `FORM_MODE`.
 ### Exclude
 
 | Name    | Type      | Default |
-|---------|-----------|---------|
+| ------- | --------- | ------- |
 | exclude | `boolean` | `false` |
 
 The `exclude` attribute is to avoid the field to be add it in the request payload.
@@ -282,7 +283,7 @@ The `exclude` attribute is to avoid the field to be add it in the request payloa
 ### Multiple
 
 | Name    | Type      | Default |
-|---------|-----------|---------|
+| ------- | --------- | ------- |
 | exclude | `boolean` | `false` |
 
 The `multiple` attribute allows you to start the `modelValue` as an array. Usually this attribute works perfectly along with the `FieldType.select`

@@ -19,5 +19,3 @@ const form = useForm({
 })
 </script>
 ```
-
-As you know, even when we have different field types there are some common attributes for every field; `class`, `id` or `name`. But there are specific attributes to handle some reserved actions and manage the input value.
