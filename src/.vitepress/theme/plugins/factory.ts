@@ -1,10 +1,11 @@
 import { reactive } from "vue";
+import { generateUUID } from "../utils/random-ui";
 
 export const endpoints: Record<string, any> = reactive({
   '/api/users/': [
-    { id: self.crypto.randomUUID(), firstName: 'John', lastName: 'Doe', age: 25 },
-    { id: self.crypto.randomUUID(), firstName: 'Jane', lastName: 'Doe', age: 24 },
-    { id: self.crypto.randomUUID(), firstName: 'Jim', lastName: 'Doe', age: 23 },
-    { id: self.crypto.randomUUID(), firstName: 'Jill', lastName: 'Doe', age: 22 }
+    { id: generateUUID(), firstName: 'John', lastName: 'Doe', age: 25 },
+    { id: generateUUID(), firstName: 'Jane', lastName: 'Doe', age: 24 },
+    { id: generateUUID(), firstName: 'Jim', lastName: 'Doe', age: 23 },
+    { id: generateUUID(), firstName: 'Jill', lastName: 'Doe', age: 22 }
   ],
 })

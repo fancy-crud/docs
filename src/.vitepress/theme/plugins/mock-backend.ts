@@ -1,3 +1,4 @@
+import { generateUUID } from "../utils/random-ui"
 import { endpoints } from "./factory"
 
 function returnDataAfterDelay(data: any, delay = 1000) {
@@ -24,7 +25,7 @@ function getUsers(id: string | null) {
 
 function createUser(data: any) {
   const list = endpoints['/api/users/'] || []
-  const id = self.crypto.randomUUID()
+  const id = generateUUID()
   const user = { id, ...data }
   
   setTimeout(() => {
