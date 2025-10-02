@@ -13,3 +13,4 @@ server/*.sqlite3
 __pycache__
 **/.vitepress/cache/deps
 src/.vitepress/cache/deps
+lib/

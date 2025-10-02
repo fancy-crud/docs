@@ -50,7 +50,8 @@ export default defineConfig({
           { text: "Basics", link: '/tables/' },
           { text: "Columns", link: '/tables/columns' },
           { text: "List", link: '/tables/list' },
-          { text: "Pagination", link: '/tables/pagination' }
+          { text: "Pagination", link: '/tables/pagination' },
+          { text: "Commands", link: '/tables/commands' }
         ]
       }
     ],
