@@ -24,15 +24,17 @@ const form = useForm({
       type: FieldType.text,
       label: 'First name',
       placeholder: 'John',
+      rules: (value) => !!value || 'First name is required',
     },
     lastName: {
       type: FieldType.text,
       label: 'Last name',
       placeholder: 'Doe',
+      rules: (value) => !!value || 'Last name is required',
     },
   },
   settings: {
-    url: 'endpoint/'
+    url: 'users/',
   },
 })
 
