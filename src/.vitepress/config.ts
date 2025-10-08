@@ -29,6 +29,7 @@ export default defineConfig({
         text: 'Getting Started',
         items: [
           { text: 'Installation', link: '/guide/get-started' },
+          { text: 'Configuration', link: '/guide/configuration' },
           { text: "Command Bus Pattern", link: '/built-in/command-bus' },
         ]
       },
@@ -40,6 +41,7 @@ export default defineConfig({
           { text: 'Buttons', link: '/forms/buttons' },
           { text: 'Rules', link: '/forms/rules' },
           { text: 'Response interceptor', link: '/forms/response-interceptors' },
+          { text: 'Custom Components', link: '/guide/custom-components' },
           { text: "Commands", link: '/forms/commands' },
           { text: 'Components', link: '/forms/components/' },
         ]
@@ -51,6 +53,7 @@ export default defineConfig({
           { text: "Columns", link: '/tables/columns' },
           { text: "List", link: '/tables/list' },
           { text: "Pagination", link: '/tables/pagination' },
+          { text: "Custom Components", link: '/tables/custom-components' },
           { text: "Commands", link: '/tables/commands' }
         ]
       }

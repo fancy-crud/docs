@@ -148,7 +148,7 @@ import Table from './components/Table.vue'
 
 You're allow to pass column properties from your preferred UI wrapper.
 
-## Reversed attributes
+## Reserved attributes
 
 ### Label
 
