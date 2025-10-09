@@ -51,6 +51,8 @@ export default defineConfig({
         items: [
           { text: "Basics", link: '/tables/' },
           { text: "Columns", link: '/tables/columns' },
+          { text: "Settings", link: '/tables/settings' },
+          { text: "Buttons", link: '/tables/buttons' },
           { text: "List", link: '/tables/list' },
           { text: "Pagination", link: '/tables/pagination' },
           { text: "Custom Components", link: '/tables/custom-components' },
