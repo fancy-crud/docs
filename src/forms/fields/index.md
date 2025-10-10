@@ -7,3 +7,5 @@
 <!--@include: ./reserved-attributes.md -->
 
 <!--@include: ./methods.md -->
+
+<!--@include: ./reactivity.md -->

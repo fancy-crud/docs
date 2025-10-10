@@ -1,11 +1,23 @@
 # Fields
-When you use `FancyCRUD` you can create forms just by specifying the fields and their attributes, and it will create the **HTML structure, handle the form data, send the request, handle the responses, display notifications, display any field error, and more.**
 
-Fields are one of the main utilities to create forms using FancyCRUD. As long you're using any of the existing wrapper, you should be able to use the props and slots from the source UI Framework.
+Fields are the building blocks of forms in FancyCRUD. When you define fields, FancyCRUD automatically:
 
-To get the correctly fields structure we need to pass the raw fields to `useForm` composable. This function will return a normalized fields to interact with. 
+✅ Creates the HTML structure  
+✅ Manages form data and state  
+✅ Handles validation  
+✅ Sends HTTP requests  
+✅ Processes responses  
+✅ Displays notifications  
+✅ Shows field-specific errors  
+✅ Supports reactive updates
 
-Let's see the next example:
+## How Fields Work
+
+Fields are defined as plain objects and passed to the `useForm` composable. FancyCRUD normalizes these raw field definitions, adding all necessary properties and methods to make them fully functional.
+
+As long as you're using one of the existing wrappers (Vuetify, Element Plus, Quasar, Oruga UI), you can use all props and slots from the underlying UI framework.
+
+## Basic Example
 
 ```vue
 <template>
@@ -37,9 +49,11 @@ const form = useForm({
 })
 </script>
 ```
-We're defining a form with the field `firstName` and `lastName`. Even when we're just defining three attributes(`type`, `label` and `placeholder`) inside these fields. The composable will normalized them and it going to add all the necessary attributes into each field.
+In this example, we only defined three attributes (`type`, `label`, and `placeholder`) for each field. However, the `useForm` composable automatically normalizes these fields and adds all necessary properties.
 
-So, we will have a structure as the next:
+## Field Normalization
+
+After normalization, each field will have a complete structure like this:
 
 ```js
 {
@@ -63,7 +77,9 @@ So, we will have a structure as the next:
 }
 ```
 
-Also, you can override those default values by passing the key with another custom value. Then you will be able to access to those properties as the follow example:
+### Accessing Normalized Fields
+
+You can override any of these default values by providing your own values. All field properties are accessible and reactive:
 
 ```vue
 <script lang="ts" setup>  
