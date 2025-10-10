@@ -36,6 +36,7 @@ export default defineConfig({
       {
         text: 'Forms',
         items: [
+          { text: 'Components', link: '/forms/components/' },
           { text: 'Fields', link: '/forms/fields/' },
           { text: 'Settings', link: '/forms/settings' },
           { text: 'Buttons', link: '/forms/buttons' },
@@ -43,7 +44,6 @@ export default defineConfig({
           { text: 'Response interceptor', link: '/forms/response-interceptors' },
           { text: 'Custom Components', link: '/guide/custom-components' },
           { text: "Commands", link: '/forms/commands' },
-          { text: 'Components', link: '/forms/components/' },
         ]
       },
       {
