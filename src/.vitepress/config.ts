@@ -56,6 +56,7 @@ export default defineConfig({
           { text: "Filters", link: '/tables/filters' },
           { text: "List", link: '/tables/list' },
           { text: "Pagination", link: '/tables/pagination' },
+          { text: "Modal", link: '/tables/modal' },
           { text: "Custom Components", link: '/tables/custom-components' },
           { text: "Components", link: '/tables/components' },
           { text: "Commands", link: '/tables/commands' }
