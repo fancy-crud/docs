@@ -277,20 +277,59 @@ export const fancyCrud = defineConfig({
 
 ### Integration with Validation Libraries
 
+FancyCRUD can integrate with any validation library. Here are examples for the most popular ones:
+
 #### Vuelidate
 
 ```ts
 import { useVuelidate } from '@vuelidate/core'
-import { required, email } from '@vuelidate/validators'
+import { required, email, minLength } from '@vuelidate/validators'
 
-rulesConfig: {
-  parser: (result) => {
-    if (result.$error) {
-      return result.$errors[0].$message
-    }
-    return true
+export const fancyCrud = defineConfig({
+  http: { request: axios },
+  components,
+  styles,
+  
+  rulesConfig: {
+    parser: (result) => {
+      if (result.$error) {
+        return result.$errors[0].$message
+      }
+      return true
+    },
   },
-}
+})
+```
+
+Usage in forms:
+
+```ts
+import { required, email, minLength } from '@vuelidate/validators'
+
+const form = useForm({
+  fields: {
+    name: {
+      type: 'text',
+      label: 'Name',
+      rules: (value) => {
+        const validator = required
+        const result = validator(value)
+        if (!result) return 'Name is required'
+        return true
+      },
+    },
+    email: {
+      type: 'text',
+      label: 'Email',
+      rules: (value) => {
+        const emailValidator = email
+        const result = emailValidator(value)
+        if (!result) return 'Invalid email format'
+        return true
+      },
+    },
+  },
+})
 ```
 
 #### Yup
@@ -298,17 +337,256 @@ rulesConfig: {
 ```ts
 import * as yup from 'yup'
 
-rulesConfig: {
-  parser: async (schema) => {
-    try {
-      await schema.validate()
-      return true
-    } catch (error) {
-      return error.message
-    }
+export const fancyCrud = defineConfig({
+  http: { request: axios },
+  components,
+  styles,
+  
+  rulesConfig: {
+    parser: async (result) => {
+      if (result instanceof Promise) {
+        try {
+          await result
+          return true
+        } catch (error) {
+          return error.message
+        }
+      }
+      return result
+    },
   },
-}
+})
 ```
+
+Usage in forms:
+
+```ts
+import * as yup from 'yup'
+
+const form = useForm({
+  fields: {
+    name: {
+      type: 'text',
+      label: 'Name',
+      rules: (value) => {
+        const schema = yup.string().required('Name is required').min(3, 'Name must be at least 3 characters')
+        return schema.validate(value)
+      },
+    },
+    email: {
+      type: 'text',
+      label: 'Email',
+      rules: (value) => {
+        const schema = yup.string().email('Invalid email format').required('Email is required')
+        return schema.validate(value)
+      },
+    },
+    age: {
+      type: 'text',
+      label: 'Age',
+      rules: (value) => {
+        const schema = yup.number().positive('Age must be positive').integer('Age must be an integer').required('Age is required')
+        return schema.validate(value)
+      },
+    },
+  },
+})
+```
+
+#### Zod
+
+```ts
+import { z } from 'zod'
+
+export const fancyCrud = defineConfig({
+  http: { request: axios },
+  components,
+  styles,
+  
+  rulesConfig: {
+    parser: (result) => {
+      if (result.success === false) {
+        return result.error.errors[0].message
+      }
+      return true
+    },
+  },
+})
+```
+
+Usage in forms:
+
+```ts
+import { z } from 'zod'
+
+const form = useForm({
+  fields: {
+    name: {
+      type: 'text',
+      label: 'Name',
+      rules: (value) => {
+        const schema = z.string().min(3, 'Name must be at least 3 characters')
+        return schema.safeParse(value)
+      },
+    },
+    email: {
+      type: 'text',
+      label: 'Email',
+      rules: (value) => {
+        const schema = z.string().email('Invalid email format')
+        return schema.safeParse(value)
+      },
+    },
+    age: {
+      type: 'text',
+      label: 'Age',
+      rules: (value) => {
+        const schema = z.coerce.number().positive('Age must be positive').int('Age must be an integer')
+        return schema.safeParse(value)
+      },
+    },
+    website: {
+      type: 'text',
+      label: 'Website',
+      rules: (value) => {
+        if (!value) return true // Optional field
+        const schema = z.string().url('Invalid URL format')
+        return schema.safeParse(value)
+      },
+    },
+  },
+})
+```
+
+#### Valibot
+
+```ts
+import * as v from 'valibot'
+
+export const fancyCrud = defineConfig({
+  http: { request: axios },
+  components,
+  styles,
+  
+  rulesConfig: {
+    parser: (result) => {
+      if (result.success === false) {
+        return result.issues[0].message
+      }
+      return true
+    },
+  },
+})
+```
+
+Usage in forms:
+
+```ts
+import * as v from 'valibot'
+
+const form = useForm({
+  fields: {
+    name: {
+      type: 'text',
+      label: 'Name',
+      rules: (value) => {
+        const schema = v.pipe(
+          v.string(),
+          v.minLength(3, 'Name must be at least 3 characters')
+        )
+        return v.safeParse(schema, value)
+      },
+    },
+    email: {
+      type: 'text',
+      label: 'Email',
+      rules: (value) => {
+        const schema = v.pipe(
+          v.string(),
+          v.email('Invalid email format')
+        )
+        return v.safeParse(schema, value)
+      },
+    },
+    age: {
+      type: 'text',
+      label: 'Age',
+      rules: (value) => {
+        const schema = v.pipe(
+          v.number(),
+          v.integer('Age must be an integer'),
+          v.minValue(1, 'Age must be at least 1'),
+          v.maxValue(120, 'Age must be less than 120')
+        )
+        return v.safeParse(schema, Number(value))
+      },
+    },
+    password: {
+      type: 'password',
+      label: 'Password',
+      rules: (value) => {
+        const schema = v.pipe(
+          v.string(),
+          v.minLength(8, 'Password must be at least 8 characters'),
+          v.regex(/[A-Z]/, 'Password must contain at least one uppercase letter'),
+          v.regex(/[a-z]/, 'Password must contain at least one lowercase letter'),
+          v.regex(/[0-9]/, 'Password must contain at least one number')
+        )
+        return v.safeParse(schema, value)
+      },
+    },
+  },
+})
+```
+
+### Installation Commands
+
+::: code-group
+```bash [Vuelidate]
+npm install @vuelidate/core @vuelidate/validators
+# or
+pnpm add @vuelidate/core @vuelidate/validators
+# or
+yarn add @vuelidate/core @vuelidate/validators
+```
+
+```bash [Yup]
+npm install yup
+# or
+pnpm add yup
+# or
+yarn add yup
+```
+
+```bash [Zod]
+npm install zod
+# or
+pnpm add zod
+# or
+yarn add zod
+```
+
+```bash [Valibot]
+npm install valibot
+# or
+pnpm add valibot
+# or
+yarn add valibot
+```
+:::
+
+### Comparison
+
+| Library   | Bundle Size | Type Safety | Async Support | Performance |
+|-----------|-------------|-------------|---------------|-------------|
+| Vuelidate | ~5kb        | ⭐⭐⭐      | ✅             | Good        |
+| Yup       | ~15kb       | ⭐⭐⭐⭐    | ✅             | Good        |
+| Zod       | ~8kb        | ⭐⭐⭐⭐⭐  | ✅             | Excellent   |
+| Valibot   | ~1kb        | ⭐⭐⭐⭐⭐  | ✅             | Excellent   |
+
+::: tip
+**Zod** and **Valibot** are recommended for new projects due to their excellent TypeScript support and small bundle size. Valibot is especially good if bundle size is a critical concern.
+:::
 
 ## Styling Configuration
 
